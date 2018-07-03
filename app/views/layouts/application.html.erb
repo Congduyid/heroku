@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+	<%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= tinymce_assets %>
+<script type="text/javascript" src="/assets/tinymce.js">
+    
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smart Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="/assets/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/assets/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="/assets/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- for bootstrap working -->
+	<script type="text/javascript" src="/assets/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+<script src="/assets/jquery.easing.min.js"></script>
+<link rel="stylesheet" href="/assets/loopslider.css">
+<link rel="stylesheet" href="/assets/slider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/assets/jquery.loopslider.js"></script>
+<link rel="icon" href="/assets/logo.png">
+</head>
+<body>
+
+<!-- banner -->
+<div class="ban-top">
+	<div style="z-index: 10;height:auto;width:100%;position:fixed; background-color:black;top:0" class="container">
+		<div class="top_nav_left">
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav menu__list">
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="/">Trang chủ <span class="sr-only">(current)</span></a></li>
+					<li class="dropdown menu__item">
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Điện thoại<span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="row">
+									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+										<p>Phân loại theo giá</p>
+										<a><img src="/assets/dt.png" alt=" "/></a>
+									</div>
+									<div class="col-sm-5 multi-gd-img">
+										<ul class="multi-column-dropdown">
+											<li><a href="/dienthoai"> Tất cả </a></li>
+											<li><a href="/theogia/giacoban"> 0đ - 1.000.000 đ</a></li>
+											<li><a href="/theogia/motba"> 1.000.000 đ - 3.000.000 đ</a></li>
+											<li><a href="/theogia/batam"> 3.000.000 đ - 8.000.000 đ</a></li>
+											<li><a href="/theogia/tammuoi"> 8.000.000 đ - 10.000.000 đ</a></li>
+											<li><a href="/theogia/muoimuoilam"> 10.000.000 đ - 15.000.000 đ</a></li>
+											<li><a href="/theogia/muoilamhaimuoi"> 15.000.000 đ - 20.000.000 đ</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-5 multi-gd-img">
+										<ul class="multi-column-dropdown">
+											<li><a href="/theogia/haimuoihailam"> 20.000.000 đ - 25.000.000 đ</a></li>
+											<li><a href="/theogia/hailambamuoi"> 25.000.000 đ - 30.000.000 đ</a></li>
+											<li><a href="/theogia/bamuoibalam"> 30.000.000 đ - 35.000.000 đ</a></li>
+											<li><a href="/theogia/balambonmuoi"> 35.000.000 đ - 40.000.000 đ</a></li>
+											<li><a href="/theogia/bonmuoibonlam"> 40.000.000 đ - 45.000.000 đ</a></li>
+											<li><a href="/theogia/bonlamnammuoi"> 45.000.000 đ - 50.000.000 đ</a></li>
+										</ul>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</ul>
+					</li>
+					<li class="dropdown menu__item">
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Phụ kiện<span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="row">
+									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+										<p>Phân loại theo giá</p>
+										<a><img src="/assets/dt.png" alt=" "/></a>
+									</div>
+									<div class="col-sm-5 multi-gd-img">
+										<ul class="multi-column-dropdown">
+
+											<li><a href="/phukien"> Tất cả </a></li>
+
+											<li><a href="/theogia/gia_0_2"> 0đ - 200.000 đ</a></li>
+											<li><a href="/theogia/gia_2_4"> 200.000 đ - 400.000 đ</a></li>
+											<li><a href="/theogia/gia_4_6"> 400.000 đ - 600.000 đ</a></li>
+											<li><a href="/theogia/gia_6_8"> 600.000 đ - 800.000 đ</a></li>
+											<li><a href="/theogia/gia_8_10"> 800.000 đ - 1.000.000 đ</a></li>
+											<li><a href="/theogia/gia_10_12"> 1.000.000 đ - 1.200.000 đ</a></li>
+
+											<li><a href="/theogia/gia_12_14"> 1.200.000 đ - 1.400.000 đ</a></li>
+											<li><a href="/theogia/gia_14_16"> 1.400.000 đ - 1.600.000 đ</a></li>
+											<li><a href="/theogia/gia_16_18"> 1.600.000 đ - 1.800.000 đ</a></li>
+											<li><a href="/theogia/gia_18_20"> 1.800.000 đ - 2.000.000 đ</a></li>
+											<li><a href="/theogia/gia_20"> Tren 2.000.000 đ</a></li>
+										</ul>
+									</div>
+
+								<!-- 	<div class="col-sm-5 multi-gd-img">
+										<ul class="multi-column-dropdown">
+											<li><a href="/theogia/gia_12_14"> 1.200.000 đ - 1.400.000 đ</a></li>
+											<li><a href="/theogia/gia_14_16"> 1.400.000 đ - 1.600.000 đ</a></li>
+											<li><a href="/theogia/gia_16_18"> 1.600.000 đ - 1.800.000 đ</a></li>
+											<li><a href="/theogia/gia_18_20"> 1.800.000 đ - 2.000.000 đ</a></li>
+											<li><a href="/theogia/gia_20"> Trên 2.000.000 đ</a></li>
+										</ul>
+									</div> -->
+									<div class="clearfix"></div>
+								</div>
+							</ul>
+					</li>
+				<li><a class="menu__link" href="/contact">Liên hệ <span class="sr-only">(current)</span></a></li>
+					<li class="dropdown menu__item">
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Giỏ hàng<span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column columns-3">
+								<div class="row">
+										<ul class="multi-column-dropdown">
+											<div id="cart">
+												<% if @cart %>
+								<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+													<%= render @cart %>
+													<% end %>
+												<% end %>	
+											</div>
+										</ul>	
+
+	
+									<div class="clearfix"></div>
+								</div>
+							</ul>
+
+							<% if current_nguoidung %>
+								<% if current_nguoidung.admin == true %>
+									<li><%= link_to "Admin", rails_admin_path, :class=>"menu__link" %></li>
+								<%end%>
+							<li><%= link_to "Đăng xuất", destroy_nguoidung_session_path, method: :delete, :class=>"menu__link" %></li>
+							<% else %>
+							<li><%= link_to "Đăng nhập", new_nguoidung_session_path, :class=>"menu__link" %></li>
+							<% end %>
+
+							
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>	
+		</div>
+		
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //banner-top -->
+<!-- banner -->
+<div class="header-bot">
+	<div class="container">
+		<div class="col-md-2 header-left">
+			<a href="/"><img style="width:120px;height:130px" src="/assets/logo.png"></a>
+		</div>
+				<div>
+				<%= form_tag home_path, method: :get do %>
+				 <div style="margin-top:40px" class="input-group input-group-lg">  
+				<%= text_field_tag "query", params[:query], placeholder: "Tìm sản phẩm, phụ kiện", :class=>'form-control' %>
+				<span class="input-group-btn">
+				<%= submit_tag "Tìm" , :class=>'btn btn-default' %>
+      </span>
+    </div>
+				  </div>
+				<% end %>
+				<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!-- //header-bot -->
+<!-- //banner -->
+<div class="header-slider" >
+	<figure>
+	<%= image_tag "/assets/qc1.png", :style=>"width:85%;height:auto" %>
+	</figure>
+	<figure>
+	<%= image_tag "/assets/qc2.png", :style=>"width:85%;height:auto" %>
+	</figure>
+	<figure>
+	<%= image_tag "/assets/qc3.png", :style=>"width:85%;height:auto" %>
+	</figure>
+	<figure>
+	<%= image_tag "/assets/qc4.png", :style=>"width:85%;height:auto" %>
+	</figure>
+</div>
+
+
+		    <%= yield %>
+
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="col-md-3 footer-left">
+			
+		</div>
+		<div class="col-md-9 footer-right">
+			<div class="col-sm-6 newsleft">
+			</div>
+			<div class="col-sm-6 newsright">
+			</div>
+			<div class="clearfix"></div>
+			<div class="sign-grds"></div>
+
+				<div class="col-md-3 sign-gd">
+					
+					<h4>Liên kết</h4>
+					<ul>
+						<li> <%= link_to "Trang chủ", root_path %></li>
+						<li> <%= link_to "Điện thoại", dienthoai_path %> </li>
+						<li> <%= link_to "Phụ kiện", phukien_path %> </li>
+						<li> <%= link_to "Liên hệ", contact_path %> </li>
+					</ul>
+				</div>
+				
+				<div class="col-md-3 sign-gd-two">
+					<h4>Thông tin cửa hàng</h4>
+					<ul>
+						<li>Địa chỉ : Hồ Chí Minh</li>
+						<li>Email : <a href="mailto:info@example.com">info@example.com</a></li>
+						<li>Phone : +1234 567 567</li>
+					</ul>
+				</div>
+				<div class="col-md-3 sign-gd flickr-post">
+					<h4>Đại sứ thương hiệu</h4>
+					<%= image_tag "/assets/daisu.png", :style=>"width:100%;height:auto" %>	
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+				
+
+		<div class="clearfix"></div>
+		<p class="copy-right">&copy 2018 Cửa hàng Samsung | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+	</div>
+</div>
+<!-- //footer -->
+
+</body>
+
+</html>
+
+</body>
+</html>
+
+<script>
+$(function(){
+	$('.header-slider').loopslider({
+		visibleItems: 1
+		,step: 1
+		,autoplay: true
+		,autoplayInterval:5000
+		,slideDuration: 800
+		,pagination: true
+		,navigation: true
+	});
+	$('.parallax-slider').loopslider({
+		visibleItems: 1
+		,pagination: true
+		,navigation: true
+		,parallax: {
+			e: '>*'
+			,index: .8
+		}
+	});
+	$('.slider').loopslider({
+		autoplay: false
+		,visibleItems: 4
+		,step: 3
+		,gap: 30
+		,slideDuration: 600
+		,easing: 'easeOutSine'
+		,prevButton: '#prev'
+		,nextButton: '#next'
+		,stopButton: '#stop'
+		,playButton: '#play'
+		,stopOnHover: true
+		,responsive: {
+			480: {visibleItems: 1,step: 1}
+			,760: {visibleItems: 3,step: 3}
+			,1000: {visibleItems: 4,step: 3}}
+		,onPlay: function(){
+			$('#play').prop('disabled',true);
+			$('#stop').prop('disabled',false);
+			$.notify({message: 'start playing'},{type: 'success',delay: 3000,placement: {from: 'bottom',align: 'right'}});
+		}
+		,onStop: function(){
+			$('#play').prop('disabled',false);
+			$('#stop').prop('disabled',true);
+			$.notify({message: 'stopped'},{type: 'danger',delay: 3000,placement: {from: 'bottom',align: 'right'}});
+		}
+		,onMove: function(i,$e,direction){
+			$.notify({message: 'moved '+direction+': #'+i},{type: 'info',delay: 3000,placement: {from: 'bottom',align: 'right'}});
+		}
+	});
+});
+</script>
+</style>

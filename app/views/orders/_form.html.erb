@@ -1,0 +1,69 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<center>
+  <table class="ec">
+  <tbody>
+   <tr>
+        <td>
+          <div class="field">
+          <%= form.label "Tên KH: " %>
+        </td>
+        <td><%= form.text_field :name,size:41 %></div></td>
+  </tr>
+
+  <tr>
+     <td>
+      <div class="field">
+      <%= form.label "Địa chỉ: " %>
+     </td>
+    <td><%= form.text_area :diachi, rows: 3, cols: 40 %></td>
+  </tr>
+
+  <tr>
+      <td>
+        <div class="field">
+        <%= form.label "Email: " %>
+      </td>
+      <td><%= form.text_field :email, size: 41 %></td>
+  </tr>     
+  
+  <tr>
+    <td>
+        <div class="field">
+        <%= form.label "Số điện thoại: " %></td>
+        <td><%= form.text_field :sdt,size:41%></td>
+  </tr>     
+  
+  <tr>
+     <td>
+         <div class="field">
+         <%= form.label "Ghi chú thêm: " %>
+      </td>
+      <td><%= form.text_area :ghichu, rows: 3, cols: 40  %></td>
+  </tr>
+
+  </tbody>
+  </table>
+
+     <div class="field">
+     <hr>
+         <div class="giatien">  <%= form.label :total %> : <%= number_to_currency(@total, unit: " VNĐ",format: "%n %u",:precision => 0) %> </div>
+         <div hidden> <%= form.number_field :total, :value =>@total,:readonly => true%> </div>
+</div>
+
+  <div class="actions">
+    <%= form.submit 'Đặt hàng', :class=>"item_add single-item hvr-outline-out button2" %>
+  </div>
+<% end %>
+								<span class="item_price"></span>
+</center>

@@ -1,0 +1,59 @@
+<p id="notice">
+    <%= notice %>
+</p>
+
+<h1>Thống kê</h1>
+<form>
+    <input class="form-control" style="width:25%" id="bday-month" type="month" name="bdaymonth">
+    <input type="submit" id="btn" value="Xem">
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Ngày đặt hàng</th>
+            <th>Tổng đơn hàng</th>
+            <th>Tác vụ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if @orders%>
+                <% @orders.each do |order| %>
+                    <tr>
+                        <td>
+                            <%= order.name %>
+                        </td>
+                        <td>
+                            <%= order.diachi %>
+                        </td>
+                        <td>
+                            <%= order.sdt %>
+                        </td>
+                        <td>
+                            <%= order.email %>
+                        </td>
+                        <td>
+                            <%= order.created_at.strftime("%d/%m/%Y") %>
+                        </td>
+                        <td>
+                            <%= number_to_currency(order.total) %>
+                        </td>
+                        <td>
+                            <%= link_to 'Xem', order , :class=>"item_add single-item hvr-outline-out button2"%>
+                            <%= link_to 'Xóa', order, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"item_add single-item hvr-outline-out button2" %>
+                        </td>
+
+                    </tr>
+
+                    <% end %>
+                        
+    </tbody>
+
+</table>   
+                    <h1>Tổng đơn: <%= number_to_currency($Alltotal, unit: " VNĐ",format: "%n %u",:precision => 0) %></h1>
+
+<%end%>         
+<br>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <%= image_tag "https://static.xx.fbcdn.net/images/emoji.php/v9/fe8/1/32/1f633.png"%>
+    <p>
+      Xin chào! <%= @order.name %>
+    </p>
+    <p>
+    <%= Time.now %><br>
+      Tên KH: <%= @order.name %>.<br>
+      Số ĐT: <%= @order.sdt %><br>
+      Email: <%= @order.email %><br>
+      Địa chỉ: <%= @order.diachi %><br>
+      Ghi chú của KH: <%= @order.ghichu %><br>
+    </p>
+    <br><hr>
+    <p>Đơn hàng của bạn: </p>
+    <%= render @order.line_items %><br>
+    <p>Tổng đơn: <%= number_to_currency(@order.total, unit: " VNĐ",format: "%n %u",:precision => 0) %> </p>
+
+  </body>
+</html>

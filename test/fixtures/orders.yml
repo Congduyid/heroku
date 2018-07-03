@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  diachi: MyText
+  email: MyString
+  sdt: 9.99
+  ghichu: MyText
+
+two:
+  name: MyString
+  diachi: MyText
+  email: MyString
+  sdt: 9.99
+  ghichu: MyText

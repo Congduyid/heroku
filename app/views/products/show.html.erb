@@ -1,0 +1,116 @@
+<% content_for :title, @product.title + " | Cửa hàng Samsung" %>
+
+<p id="notice"><%= notice %></p>
+<div class="single">
+	<div class="container">
+		<div class="col-md-6 single-right-left animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
+			<div class="grid images_3_of_2">
+				
+<div class="zoom"><center><p><%= image_tag @product.image.url(:medium),:style=>"width:100%; height:auto; max-width: 60%; max-height:60%"%></p></center></div>
+
+					<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="col-md-6 single-right-left simpleCart_shelfItem animated wow slideInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInRight;">
+					<a class="list-group-item"><span class="badge badge-primary">Thông tin sản phẩm</span> <i class="ti ti-bell"></i> 
+						<h1 style="font-size: 23px; font-weight:bold"><%= @product.title %></h1>
+						<span style="font-size: 30px;color:#BF360C" class="item_price"><%= number_to_currency(@product.price, unit: " VNĐ",format: "%n %u",:precision => 0) %></span>		
+					</a>
+					<a class="list-group-item">
+						<span class="badge badge-info">Loại</span> <i class="ti ti-bell"></i> <%= @product.loai.loaihang %> 
+						<iframe src="https://www.facebook.com/plugins/share_button.php?href= <%= request.original_url %> " width="113" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+					</a>
+ 
+					<%= image_tag "/assets/banner2.gif",:style=>"height: auto ;width: 100%; z-index: 1" %>	
+					<div class="description">
+						<%= button_to 'Thêm vào giỏ hàng', line_items_path(:product_id => @product),remote: true, :class=>"item_add single-item hvr-outline-out button2" %>
+						<!-- Hiển thị random 5 phụ kiện -->
+							<% @ecs.each do |product| %>				
+							<div class="col-md-4 product-men">
+							<% if product.hot == true %>
+								<%= image_tag "/assets/hot.gif",:style=>"position: absolute;height: 50px ;width: 80px; left: 0px; z-index: 1" %>
+							<% end %>
+							<div class="men-pro-item simpleCart_shelfItem">
+								<div class="men-thumb-item">
+								<p><%= image_tag product.image.url(:medium), :class=>"pro-image-front", :style=>"width: 100%;height: auto" %></p>
+								<p><%= image_tag product.image.url(:medium), :class=>"pro-image-back", :style=>"width: 100%;height: auto"%></p>
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+											        <td><%= link_to 'Chi tiết', product ,:class=>"link-product-add-cart",:style=>"width:100%;margin-bottom:50px" %></td>
+											</div>
+										</div>										
+								</div>
+								<div class="item-info-product ">
+								<%=link_to product do%><h3 style="font-size:15px"><%= product.title %></h3> <%end%>									
+								<div class="info-product-price">
+								<span  style="font-size:15px" class="item_price"><%= number_to_currency(product.price, unit: " VNĐ",format: "%n %u",:precision => 0) %></span>
+									</div>
+									<%= button_to 'Thêm vào giỏ hàng', line_items_path(:product_id => product),remote: true, :class=>"item_add single-item hvr-outline-out button2", :style=>"width:auto;font-size:13px" %>
+								</div>
+							</div>
+							</div>
+    						<% end %>
+						</div>
+						<!--Hết phần hiển thị random phụ kiện-->
+
+					</a> </center>
+
+						<div class="clearfix"> </div>
+					</div>				
+		</div>
+
+
+				
+						<div class="clearfix"></div>
+</div>
+
+
+			<div class="alert alert-success alert-dismissable">
+				<button aria-hidden="true" data-dismiss="alert" class="close" type="button"> Đóng </button>
+				<h2 class="t-button"><span class="label label-success">Chính sách ưu đãi khi mua hàng</span></h2>
+				<p> <%= image_tag "/assets/delivery.png", :size=>"30x23" %> Miễn phí vận chuyển</p>
+				<p> <%= image_tag "/assets/doitra.png", :size=>"30x23" %> Cho phép đổi trả trong 2 tháng đầu tiên</p>
+				<p> <%= image_tag "/assets/247.png", :size=>"30x23" %> Dịch vụ khách hàng 24/7</p>
+			</div>
+
+
+				<div class="clearfix"> </div>
+				<div class="bootstrap-tab animated wow slideInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+						<ul id="myTab" class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Chi tiết sản phẩm</a></li>
+							<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Đánh giá sản phẩm</a></li>
+						</ul>
+						<div style="padding-left:5%; padding-right:5%" id="myTabContent" class="tab-content">
+							<div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">
+								<h5>  <%= @product.title %></h5>
+						  				<%=raw @product.description %>
+  				</div>
+							<div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile" aria-labelledby="profile-tab">
+								<div class="bootstrap-tab-text-grids">
+									<div class="bootstrap-tab-text-grid">
+										
+										<div id="disqus_thread"></div>
+											<script>
+											(function() {
+											var d = document, s = d.createElement('script');
+											s.src = 'https://bansamsung.disqus.com/embed.js';
+											s.setAttribute('data-timestamp', +new Date());
+											(d.head || d.body).appendChild(s);
+											})();
+											</script>
+											<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>		
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<% if session[:user_id] %>
+<p>Chức năng cho Admin</p>
+<%= link_to 'Sửa thông tin sản phẩm', edit_product_path(@product) %> |
+<%= link_to 'Quản lý sản phẩm', products_path %>
+<% end %>

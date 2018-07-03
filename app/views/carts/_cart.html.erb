@@ -1,0 +1,16 @@
+<% unless cart.line_items.empty? %>
+<h2>Đơn hàng của bạn</h2>
+	<table class="table table-bordered">
+		<th>Số lượng</th>
+		<th>Tên sản phẩm</th>
+		<th>Giá sản phẩm</th>
+		<%= render(cart.line_items) %>
+		<tr class="total_line">
+			<b><p style="font-size: 15px;">Tổng đơn:</p></b>
+			<p style="font-size: 20px;" class="total_cell"><%= number_to_currency(cart.total_price, unit: " VNĐ",format: "%n %u",:precision => 0) %></p><hr>
+		</tr>
+	</table>
+	<%= button_to "Đặt hàng", new_order_path, method: :get %>
+	<%= button_to 'Xoá giỏ hàng', cart, method: :delete,data: { confirm: 'Are you sure?' } %>
+	<% end %>
+
